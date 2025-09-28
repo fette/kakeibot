@@ -2,6 +2,26 @@
 
 | Merchant pattern | Default category | Notes |
 | --- | --- | --- |
+| ﾗｸﾃﾝﾌｧｯｼｮﾝ        (ﾗｸﾃﾝ | 諸々 | Prestia 楽天ファッション |
+| ｶｲｾﾝｵﾀﾙ           (ﾗｸﾃﾝ | 食費 | 楽天 海鮮おたる |
+| 四季彩　一力／ＮＦＣ | 東北旅行 | Dinner during Tohoku trip |
+| 龍泉洞事務所 | 東北旅行 | Tohoku trip attraction |
+| ﾎﾃﾙﾓﾘﾉｶｾﾞﾅｽｾｲｻﾝｷ | 東北旅行 | Tohoku trip hotel stay |
+| サイゼリヤ／ＮＦＣ | 食費 | Prestia tap purchases at Saizeriya |
+| ＫＩＤＳＮＡシッター | 経費 | Kidsna sitter lessons |
+| ドミノ・ピザ大井町店／ＮＦＣ | 食費 | Domino pizza |
+| MIDJOURNEY INC. | Wおかづかい | Creative subscription |
+| 券売機（東日本高速道路）／ｉＤ | 東北旅行 | Highway ticket machine |
+| ﾗｸﾃﾝﾌｧｯｼｮﾝ        (ﾗｸﾃﾝ | 諸々 | Prestia 楽天ファッション |
+| ｶｲｾﾝｵﾀﾙ           (ﾗｸﾃﾝ | 食費 | 楽天 海鮮おたる |
+| 四季彩　一力／ＮＦＣ | 東北旅行 | Dining during Tohoku trip |
+| 龍泉洞事務所 | 東北旅行 | Tohoku trip attraction |
+| ﾎﾃﾙﾓﾘﾉｶｾﾞﾅｽｾｲｻﾝｷ | 東北旅行 | Hotel during Tohoku trip |
+| サイゼリヤ／ＮＦＣ | 食費 | Prestia tap purchases at Saizeriya |
+| ＫＩＤＳＮＡシッター | 経費 | Kidsna sitter lessons |
+| ドミノ・ピザ大井町店／ＮＦＣ | 食費 | Domino pizza |
+| MIDJOURNEY INC. | Wおかづかい | Creative subscription |
+| 券売機（東日本高速道路）／ｉＤ | 東北旅行 | Highway ticket machine |
 | セブン-イレブン* | 食費 | Convenience store groceries and snacks |
 | ファミリーマート* | 食費 | Convenience store groceries and snacks |
 | ローソン* | 食費 | Convenience store groceries and snacks; flag large-ticket items for review |

@@ -29,6 +29,27 @@
    - Do **not** include a header row; start directly with the first detail line so pasting into Numbers populates the existing table.
    - Ensure fields containing commas remain unquoted (TSV avoids comma-escaping issues when pasting).
 
+### Prestia card statement import → budget worksheet format
+
+### Source data (Prestia PDF statements)
+- Statements are downloaded as PDFs from SMBC Trust Bank (Prestia) and list card transactions for specific cards (masked numbers such as `****-****-****-3249`).
+- Text is embedded in the PDF streams, so we can extract it programmatically without manual export.
+
+### Extraction + normalization checklist
+1. **Parse statement text**
+   - Run `python3 scripts/parse_prestia_statement.py <input.pdf> <output.tsv>`; the helper script inflates the PDF content streams, decodes Shift-JIS text, and emits a raw table with columns: `card_last4`, `date (YYYY-MM-DD)`, `merchant`, `currency`, `amount` (negative for spend), `notes` (currently blank).
+   - The script treats year values like `25/08/22` as 2025-08-22 (prefix `20`), assumes amounts shown are positive outflows, and preserves the currency code (`JPY`, `USD`, etc.).
+   - Any strings the parser cannot decode cleanly are written to STDERR so they can be inspected manually.
+2. **Map to budget columns**
+   - Apply `MERCHANT_CATEGORY_MAP.md` (reuse the same lookup as PayPay) to determine the budget category. Add new Prestia-specific merchants to the mapping as they appear.
+   - Convert the ISO date (`YYYY-MM-DD`) into `M/D` for the `Date` column when generating the Numbers import file.
+   - Set `Method` to `Prestia <last4>` so we can distinguish which card generated the spend.
+   - For foreign-currency lines, keep `金額 (JPY)` blank for now and use `Notes` to capture the original `currency` + amount until we implement FX conversion rules.
+3. **Export for Numbers**
+   - Just like the PayPay workflow, produce a TSV with columns `['', Date, Merchant, Method, 金額 (USD), 金額 (JPY), Notes, 備考, 月, Category]` and no header row.
+   - Populate `金額 (JPY)` with the signed yen amount once we have a conversion (for pure JPY transactions, use the statement amount directly and negate it).
+   - Include `月` based on the transaction date (`YYYY-MM`).
+
 ### Merchant → category mapping
 - Maintain shared mappings in `MERCHANT_CATEGORY_MAP.md` using the format: merchant pattern, default category, optional notes.
 - Use exact merchant text when possible; fall back to wildcard descriptions (e.g., `IKEA*`) if the export varies.
@@ -41,6 +62,7 @@
 - Clarify how to handle duplicate transactions (PayPay sometimes exports repeated rows). Add rules when you encounter them.
 - If a PayPay merchant still lacks a mapping, get a decision before running the transformation.
 - Build up the merchant mapping table as you discover recurring merchants so future imports auto-classify.
+- For Prestia statements, define how to capture foreign-currency purchases (conversion source, rate, which column stores the FX amount) before importing large batches.
 
 ---
 Add further project instructions to this document as workflows evolve.
