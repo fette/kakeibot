@@ -66,3 +66,27 @@
 
 ---
 Add further project instructions to this document as workflows evolve.
+
+## USAA credit card paste → budget worksheet format
+
+### Source data (USAA clipboard paste)
+- Pasting the web portal transaction list yields repeating blocks: a combined date/description line (`Aug 29, 2025August 29, 2025	Merchant`), followed by `Category`, then `Amount`.
+- Dates always appear twice in the first field; we grab the first `Mon DD, YYYY` occurrence and use the text after the tab as the merchant name.
+
+### Transformation checklist
+1. **Normalize blocks**
+   - Drop the static headers (`Date`, `Description`, `Category`, `Amount`).
+   - Walk the remaining lines in groups of three (date/merchant, category, amount).
+   - Parse the date with `%b %d, %Y`, convert to `M/D` for display and `YYYY-MM` for the month column.
+   - Strip the dollar sign, negate the value for spends, and keep USD amounts (leave `金額 (JPY)` blank).
+   - Preserve the USAA web category as a note for later review/map it via `MERCHANT_CATEGORY_MAP.md` once rules are defined.
+2. **Export for Numbers**
+   - Emit a TSV with the usual column order (`['', Date, Merchant, Method, 金額 (USD), 金額 (JPY), Notes, 備考, 月, Category']`).
+   - Set `Method` to `USAA` (or `USAA <last4>` if multiple cards).
+   - For now store the USAA portal category in `Notes`; overwrite it with a plain-language memo for any allowance (`Wおかづかい`) spend so it copies cleanly into Numbers, and mark `Category` as `要確認` until we build a dedicated mapping table.
+
+### Automation
+- Parser script lives in `scripts/parse_usaa_clip.py`. Running
+  `python3 scripts/parse_usaa_clip.py USAA/<month> USAA/<month>_raw.tsv USAA/<month>_numbers.tsv`
+  converts the clipboard dump into both a normalized raw TSV and a Numbers-ready TSV.
+

@@ -2,6 +2,15 @@
 
 | Merchant pattern | Default category | Notes |
 | --- | --- | --- |
+| Dispel Dice* | Wおかづかい | Dice preorder and accessories |
+| Ott Dropout* | Wおかづかい | Dropout subscription |
+| Patreon* | Wおかづかい | Monthly pledge |
+| Onebookshel* | Wおかづかい | DriveThruRPG / Onebookshelf purchases |
+| Off Book Clubhouse* | Wおかづかい | Off Book membership charges |
+| YouTube Premium* | Wおかづかい | YouTube Premium family plan |
+| Kickstarter* | Wおかづかい | Creator campaigns (Off Book etc.) |
+| OpenAI* | 諸々 | General purpose tools subscription |
+| Apple* | 要確認 | Specify subscription (Ulysses, Apple One, The Way, etc.) before categorizing |
 | ﾗｸﾃﾝﾌｧｯｼｮﾝ        (ﾗｸﾃﾝ | 諸々 | Prestia 楽天ファッション |
 | ｶｲｾﾝｵﾀﾙ           (ﾗｸﾃﾝ | 食費 | 楽天 海鮮おたる |
 | 四季彩　一力／ＮＦＣ | 東北旅行 | Dinner during Tohoku trip |
@@ -10,7 +19,7 @@
 | サイゼリヤ／ＮＦＣ | 食費 | Prestia tap purchases at Saizeriya |
 | ＫＩＤＳＮＡシッター | 経費 | Kidsna sitter lessons |
 | ドミノ・ピザ大井町店／ＮＦＣ | 食費 | Domino pizza |
-| MIDJOURNEY INC. | Wおかづかい | Creative subscription |
+| MIDJOURNEY INC. | W work | Creative subscription |
 | 券売機（東日本高速道路）／ｉＤ | 東北旅行 | Highway ticket machine |
 | ﾗｸﾃﾝﾌｧｯｼｮﾝ        (ﾗｸﾃﾝ | 諸々 | Prestia 楽天ファッション |
 | ｶｲｾﾝｵﾀﾙ           (ﾗｸﾃﾝ | 食費 | 楽天 海鮮おたる |
@@ -20,7 +29,7 @@
 | サイゼリヤ／ＮＦＣ | 食費 | Prestia tap purchases at Saizeriya |
 | ＫＩＤＳＮＡシッター | 経費 | Kidsna sitter lessons |
 | ドミノ・ピザ大井町店／ＮＦＣ | 食費 | Domino pizza |
-| MIDJOURNEY INC. | Wおかづかい | Creative subscription |
+| MIDJOURNEY INC. | W work | Creative subscription |
 | 券売機（東日本高速道路）／ｉＤ | 東北旅行 | Highway ticket machine |
 | セブン-イレブン* | 食費 | Convenience store groceries and snacks |
 | ファミリーマート* | 食費 | Convenience store groceries and snacks |
