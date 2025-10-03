@@ -59,7 +59,7 @@
 | スポーツオアシス* | 経費 | Gym and other おけいこ programs |
 | カナマチぷらっと* | 経費 | Community lesson/program fees |
 | ユアー・パーキング* | 諸々 | Parking fees |
-| SANZOKU* | 諸々 | General shopping at インベーダー商店 |
+| SANZOKU* | 食費 | General shopping at インベーダー商店 |
 | しまむら* | 諸々 | Clothing and household goods |
 | ダイソー* | 諸々 | 100-yen miscellaneous shopping; ask if it should be 玲お小遣い |
 | スギ薬局グループ* | 諸々 | Drugstore purchases |
